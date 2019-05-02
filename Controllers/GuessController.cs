@@ -1,17 +1,18 @@
-// using System.Collections.Generic;
-// using System;
-// using Microsoft.AspNetCore.Mvc;
-// using Hangman.Models;
-//
-// namespace Hangman.Controllers
-// {
-//   public class GuessController : Controller
-//   {
-//     [HttpGet("/letter")]
-//     public ActionResult IndexHome()
-//     {
-//
-//       return View();
-//     }
-//  }
-// }
+using Microsoft.AspNetCore.Mvc;
+using Hangman.Models;
+using System.Collections.Generic;
+
+namespace Hangman.Controllers
+{
+  public class QuessController : Controller
+  {
+
+    [HttpGet("/makequess")]
+    public ActionResult Index(int categoryId)
+    {
+       
+       return RedirectToAction("IndexHome");
+    }
+
+  }
+}

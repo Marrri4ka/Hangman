@@ -10,8 +10,12 @@
       <label for="letter">Add a letter</label>
       <input id="letter" name="letter" type="text">
       <button type="submit">Submit</button>
-    
-    </form>
+      </form>
+
+      @foreach (Guess guess in Model)
+      {
+        <p>@guess.GetLetter()</p>
+      }
 
   </body>
 </html
