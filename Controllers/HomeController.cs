@@ -1,5 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
+using Hangman.Models;
+using System.Collections.Generic;
 
 namespace Hangman.Controllers
 {
@@ -8,7 +10,18 @@ namespace Hangman.Controllers
     [HttpGet("/")]
     public ActionResult IndexHome()
     {
-      return View();
+
+      string currentGuess = Guess.FindMatch();
+      return View("IndexHome", currentGuess);
+    }
+
+
+    [HttpPost("/letter")]
+    public ActionResult AddLetter(string letter)
+    {
+        Guess guess = new Guess (letter);
+        string currentGuess = Guess.FindMatch();
+        return View("IndexHome", currentGuess);
     }
 
   }
