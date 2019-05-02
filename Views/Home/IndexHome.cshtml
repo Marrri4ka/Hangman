@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <title>hangman</title>
-  </head>
-  <body>
-    <h1>Hangman</h1>
-    <form action="/letter" method="post">
-      <label for="letter">Add a letter</label>
-      <input id="letter" name="letter" type="text">
-      <button type="submit">Submit</button>
-      </form>
+<head>
+  <meta charset='utf-8'>
+  <title>hangman</title>
+</head>
 
 
-       <p> Current guess is: @Model</p>
+<body>
+  <h1>Hangman</h1>
+  <form action="/letter" method="post">
+    <label for="letter">Add a letter</label>
+    <input id="letter" name="letter" type="text">
+    <button type="submit">Submit</button>
+  </form>
 
-  </body>
-</html
+   <p> Current guess is: @Model</p>
+
+</body>
+
+</html>
