@@ -10,13 +10,36 @@ public class Guess
   private string _quessLetter;
   private static string _secretWord = "venera";
   private static List<Guess> allguesses = new List<Guess>();
+  private static int _score =6;
+  private string _photo;
 
 
   public Guess(string guessLetter)
   {
     _quessLetter = guessLetter;
     allguesses.Add(this);
+    SetStatus();
 
+  }
+
+  public string GetPhoto()
+  {
+    return _photo;
+  }
+  public static Guess GetCurrentGuess()
+  {
+    return allguesses[0];
+  }
+
+  public int GetScore()
+  {
+    return _score;
+  }
+
+  public void SetScore(int newScore)
+  {
+    _score = newScore;
+    SetStatus();
   }
 
 
@@ -34,10 +57,30 @@ public class Guess
   {
     return allguesses;
   }
+  private void SetStatus()
+  {
+    if(_score == 6)
+    {
+      _photo = "1.jpg";
+    }
+    if(_score == 5)
+    {
+      _photo = "2.jpg";
+    }
+    if(_score == 4)
+    {
+      _photo = "3.jpg";
+    }
+    if(_score == 5)
+    {
+      _photo = "4.jpg";
+    }
+  }
 
   public static string FindMatch()
   {
     string result= "";
+    int score = 6;
 
 for (int i=0; i < _secretWord.Length; i++)
 {
@@ -57,13 +100,17 @@ for (int i=0; i < _secretWord.Length; i++)
   else
   {
     result += "_";
+
   }
 
 
+  }
+  return result;
 }
 
-    return result;
-  }
+
+
+
 
 
 }

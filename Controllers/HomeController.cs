@@ -24,5 +24,12 @@ namespace Hangman.Controllers
         return View("IndexHome", currentGuess);
     }
 
+    [HttpPost("/score")]
+    public ActionResult CheckScore(int score)
+    {
+        Guess guess = new Guess(score.ToString());
+        guess.SetScore(score);
+        return View("IndexHome");
+    }
   }
 }
